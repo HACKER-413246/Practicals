@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decimal to Binary Converter</title>
+    <script>
+        function ConvertToBinary() {
+            // Get the decimal number from the input field
+            var decimal = document.getElementById("decimalNumber").value;
+            
+            // Convert the decimal number to binary if it is valid
+            if (!isNaN(decimal) && decimal !== "") {
+                var binary = parseInt(decimal, 10).toString(2);
+                document.getElementById("binaryResult").innerHTML = "Binary: " + binary;
+            } else {
+                document.getElementById("binaryResult").innerHTML = "Please enter a valid decimal number.";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Decimal to Binary Converter</h2>
+    
+    <!-- Form to accept a decimal number -->
+    <form method="post">
+        <label for="decimalNumber">Enter a decimal number:</label>
+        <input type="text" id="decimalNumber" name="decimalNumber">
+        <input type="button" value="Convert" onclick="ConvertToBinary()">
+    </form>
+    
+    <!-- Result area to display the binary equivalent -->
+    <p id="binaryResult"></p>
+
+</body>
+</html>
